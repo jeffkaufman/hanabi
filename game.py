@@ -77,7 +77,7 @@ class Game(object):
     self.board = Board()
     self.turn = 0
     self.mistakes = 0
-    self.information = num_players * 4
+    self.information = 8
     self.num_players = num_players
     self.told = None
 
@@ -163,6 +163,7 @@ class Game(object):
       message = choose_message()
       if message:
         self.told = message
+        self.information -= 1
         print "Told %s to mean play #%s" % (message, MEANING[message])
         moved = True
 
